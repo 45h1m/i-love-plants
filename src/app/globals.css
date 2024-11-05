@@ -3,19 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #e9edde;
+  --foreground: #032f05;
+  --primary-green: #224821; /* Primary green color */
+  --secondary-green: #c2dea9; /* Lighter shade for accents */
+  --dark-green: #032f05; /* Darker shade for depth */
+  --light-green-bg: #E8F5E9; /* Soft background */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-green: #81C784;
+    --secondary-green: #A5D6A7;
+    --dark-green: #2E7D32;
+    --light-green-bg: #1B5E20;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-color {
+  background-color: var(--background);
+}
+
+.bg-primary-green {
+  background-color: var(--primary-green);
+}
+.bg-secondary-green {
+  background-color: var(--secondary-green);
+}
+
+.text-primary-green {
+  color: var(--primary-green);
+  
+}
+.text-secondary-green {
+  color: var(--secondary-green);
+  
+}
+.text-light-green {
+  color: var(--light-green-bg);
+  
+}
+
+.bg-light-green {
+  background-color: var(--light-green-bg);
+}
+
+.text-dark-green {
+  color: var(--dark-green);
 }
