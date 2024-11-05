@@ -1,5 +1,4 @@
 "use client"
-import { ArrowBigLeft, Menu } from "lucide-react";
 import { useRef } from "react";
 
 const AsideMenu = () => {
