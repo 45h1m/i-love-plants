@@ -4,17 +4,9 @@ import AsideMenu from "./AsideMenu";
 
 const Header = () => {
     return (
-        <header className="px-2 sticky top-0">
-            <div
-                className="max-w-7xl rounded-b-3xl p-2 pt-4"
-                style={{
-                    backgroundImage: `url('/header-bg.webp')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    width: "100%", // Set width as per your requirement
-                }}
-            >
-                <div className="rounded-2xl bg-color flex p-2">
+        <header className="sticky top-0">
+            <div className="max-w-7xl rounded-b-3xl p-2">
+                <div className="rounded-2xl bg-light-green border border-green flex p-2">
                     <div className="left h-full flex gap-2 items-center">
                         <AsideMenu />
                         <div className="logo h-full w-12 p-1">
@@ -29,6 +21,10 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <div
+                className="fixed top-0 left-0 w-full h-[10vh] -z-30 gradient-green-to-b"
+                
+            ></div>
         </header>
     );
 };

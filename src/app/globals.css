@@ -28,6 +28,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.border-green {
+  border-color: var(--secondary-green);
+}
+
 .bg-color {
   background-color: var(--background);
 }
@@ -58,4 +62,17 @@ body {
 
 .text-dark-green {
   color: var(--dark-green);
+}
+
+.gradient-green-to-b {
+  background: linear-gradient(to bottom, var(--primary-green) 10%, transparent 80%);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
 }
