@@ -1,6 +1,15 @@
 import { LoaderCircle } from "lucide-react";
 
-const Button = ({disabled, children, loading, onclick, customClass}:any) => {
+type ButtonProps = {
+  disabled?: boolean;
+  children: React.ReactNode;
+  loading?: boolean;
+  onclick?: () => void;
+  customClass?: string;
+};
+
+
+const Button = ({disabled, children, loading, onclick, customClass}:ButtonProps) => {
     return <button disabled={disabled} onClick={onclick} className={`flex w-fit items-center gap-2 h-12 leading-none align-middle self-center px-6 rounded-lg font-semibold bg-emerald-400 hover:brightness-125 ${customClass ? customClass : ""}`}>{loading ? <LoaderCircle className="animate-spin" /> : children}</button>;
 };
 
