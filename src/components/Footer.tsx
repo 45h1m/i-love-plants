@@ -12,7 +12,7 @@ const Footer = () => {
                 width: "100%", // Set width as per your requirement
             }}
         >
-            <div className="max-w-7xl bg-green-100/40 backdrop-blur-sm w-fit p-2 px-4 rounded-3xl mx-auto border">
+            <div className="max-w-7xl bg-green-100/60 backdrop-blur-sm w-fit p-2 px-4 rounded-3xl mx-auto border">
                 <ul className="flex gap-4">
                     <Link href={"/"}>
                         <li>
