@@ -33,7 +33,7 @@ export default function CategorySelector() {
                             ref={(el) => {
                                 categoryRefs.current[index] = el;
                             }}
-                            className={`flex cursor-pointer px-6 py-4 rounded-2xl text-sm ${
+                            className={`flex cursor-pointer px-6 py-4 rounded-2xl text-sm font-bold ${
                                 selectedCategory === category ? "bg-primary-green text-light-green" : "bg-background text-gray-700"
                             }`}
                         >

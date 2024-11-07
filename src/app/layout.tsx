@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 
-const arima = Arima({ weight: "700", subsets: ["latin"] });
+const arima = Arima({ weight: ["100", "200","300", "400", "500", "600", "700"], subsets: ["latin"] });
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -19,11 +19,14 @@ export const metadata: Metadata = {
         default: "I Love Plants",
         template: "%s | ILovePlants",
     },
-    description: "One stop for your plant needs."
+    description: "One stop for your plant needs.",
 };
 
 export const viewport: Viewport = {
-    themeColor: "#224821",
+    themeColor: [
+        { media: "(prefers-color-scheme: dark)", color: "#121212" }, // Dark mode color
+        { media: "(prefers-color-scheme: light)", color: "#224821" }, // Light mode color
+    ],
 };
 
 export default function RootLayout({

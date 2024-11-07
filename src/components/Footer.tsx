@@ -12,13 +12,13 @@ const Footer = () => {
                 width: "100%", // Set width as per your requirement
             }}
         >
-            <div className="max-w-7xl bg-green-100/60 backdrop-blur-sm w-fit p-2 px-4 rounded-3xl mx-auto border">
+            <div className="max-w-7xl bg-green-100/80 backdrop-blur-sm w-fit p-2 px-4 rounded-3xl mx-auto border">
                 <ul className="flex gap-4">
                     <Link href={"/"}>
                         <li>
                             <div className="flex justify-center flex-col items-center gap-2">
                                 <Home className="size-5" />
-                                <p className="text-sm">Home</p>
+                                <p className="text-sm font-bold">Home</p>
                             </div>
                         </li>
                     </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
                         <li>
                             <div className="flex justify-center flex-col items-center gap-2">
                                 <LayoutGrid className="size-5" />
-                                <p className="text-sm">Categories</p>
+                                <p className="text-sm font-bold">Categories</p>
                             </div>
                         </li>
                     </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
                         <li>
                             <div className="flex justify-center flex-col items-center gap-2">
                                 <Package className="size-5" />
-                                <p className="text-sm">Orders</p>
+                                <p className="text-sm font-bold">Orders</p>
                             </div>
                         </li>
                     </Link>
