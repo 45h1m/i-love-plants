@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <div className="z-10">
             <FilterCategory />
-            <div className="w-full max-w-5xl p-2 gap-4" style={{ columns: "240px" }}>
+            <div className="w-full max-w-5xl p-2 gap-4" style={{ columns: "200px" }}>
                 <ProductCard
                     title="Peace Lily"
                     description="Air Purifying Indoor Plant"
