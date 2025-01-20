@@ -16,8 +16,8 @@ type ProductCard = {
 
 const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, rating }: ProductCard) => {
     return (
-        <Link href={url} className="z-0 w-full">
-            <div className="-z-10 relative w-full bg-white rounded-3xl flex flex-col overflow-hidden mb-4 shadow-md">
+        <Link href={url} className="z-0 w-full group">
+            <div className="-z-10 relative w-full bg-white rounded-3xl flex flex-col overflow-hidden mb-4 shadow-sm">
                 <button className="absolute right-2 top-2 bg-light-green text-primary-green rounded-full size-10 flex items-center justify-center z-10 shadow-lg">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +36,15 @@ const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, 
                 </button>
 
                 <div className="flex h-full relative">
-                    <img
-                        width={100}
-                        height={100}
-                        alt="Product-image"
-                        src={thumbnail}
-                        className="w-full top-0 left-0 object-cover"
-                    />
+                    <div className="w-full overflow-hidden">
+                        <img
+                            width={100}
+                            height={100}
+                            alt="Product-image"
+                            src={thumbnail}
+                            className="w-full top-0 left-0 object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
+                        />
+                    </div>
                     <div className="absolute bottom-2 left-2 flex items-center rounded-bl-xl rounded-tr-xl bg-color">
                         <p className="flex items-center gap-1 py-1 px-1 text-light-green text-xs font-semibold bg-primary-green rounded-tr-lg rounded-bl-lg leading-none">
                             <span className="translate-y-[1.5px] align-middle text-secondary-green">{rating}</span>
@@ -72,32 +74,12 @@ const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, 
                         <span className="text-xs line-clamp-1">{description}</span>
                     </div>
                     <div className="flex justify-between items-center gap-2">
-                        <div className="w-full pl-3">
-                            <p className="text-xl text-end flex flex-col justify-center">
+                        <div className="w-full pl-3 pb-2">
+                            <p className="text-xl text-end flex items-baseline">
                                 <small className="text-sm text-muted-green font-bold">Rs.</small> <strong className="font-extrabold">{price}</strong>
                             </p>
                         </div>
-                        <div>
-                            <Button customClass="bg-primary-green text-light-green rounded-full rounded-tr-none w-max">
-                                Add
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="lucide lucide-shopping-cart"
-                                >
-                                    <circle cx="8" cy="21" r="1" />
-                                    <circle cx="19" cy="21" r="1" />
-                                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                                </svg>
-                            </Button>
-                        </div>
+                        <div></div>
                     </div>
                 </div>
             </div>

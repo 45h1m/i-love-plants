@@ -15,8 +15,9 @@ const Footer = () => {
                 position: "absolute",
                 left: "0",
                 bottom: "0",
+                pointerEvents: "none"
             }}></div>
-            <nav className="max-w-7xl bg-green-100/80 backdrop-blur-lg w-fit p-2 px-4 rounded-3xl mx-auto border shadow-2xl">
+            <nav className="max-w-7xl bg-white backdrop-blur-lg w-fit p-2 px-4 rounded-3xl mx-auto shadow-2xl">
                 <ul className="flex gap-4">
                     <Link href={"/"}>
                         <li>
