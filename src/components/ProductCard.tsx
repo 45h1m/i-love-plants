@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 import Button from "./Button";
-import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 type ProductCard = {
     thumbnail: string;
