@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className="sticky top-0 z-50">
             <div className="max-w-7xl rounded-b-3xl p-2">
-                <div className="rounded-2xl bg-light-green border border-green flex p-2">
+                <div className="rounded-2xl bg-white flex p-2 shadow-md shadow-green-800/10">
                     <div className="left h-full flex gap-2 items-center">
                         <AsideMenu />
                         <div className="logo h-full w-12 p-1">

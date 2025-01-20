@@ -4,15 +4,19 @@ import Link from "next/link";
 const Footer = () => {
     return (
         <footer
-            className="fixed w-full bottom-0 left-0 p-2 pt-10 z-10"
-            style={{
+            className="fixed w-full bottom-0 left-0 p-2 z-10"
+        >
+            <div style={{
                 backgroundImage: `url('/grass-bottom.png')`,
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "center top",
                 width: "100%", // Set width as per your requirement
-            }}
-        >
-            <div className="max-w-7xl bg-green-100/80 backdrop-blur-sm w-fit p-2 px-4 rounded-3xl mx-auto border">
+                height: "23vh",
+                position: "absolute",
+                left: "0",
+                bottom: "0",
+            }}></div>
+            <nav className="max-w-7xl bg-green-100/80 backdrop-blur-lg w-fit p-2 px-4 rounded-3xl mx-auto border shadow-2xl">
                 <ul className="flex gap-4">
                     <Link href={"/"}>
                         <li>
@@ -39,7 +43,7 @@ const Footer = () => {
                         </li>
                     </Link>
                 </ul>
-            </div>
+            </nav>
         </footer>
     );
 };

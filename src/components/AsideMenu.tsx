@@ -67,7 +67,7 @@ const AsideMenu = () => {
     return (
         <div className="relative">
             <Menu size={34} className="cursor-pointer" onClick={showMenu} />
-            <aside ref={asideRef} className="fixed z-30 top-0 left-[-150%] flex h-full w-full" id="aside-menu">
+            <aside ref={asideRef} className="fixed z-50 top-0 left-[-150%] flex h-full w-full" id="aside-menu">
                 <div className="menu bg-gradient-to-br bg-primary-green w-2/3 shadow-2xl"></div>
                 <div ref={asideHideSpaceRef} className="space bg-black/70 opacity-0 w-1/3 scale-x-150 origin-left" onClick={hideMenu} id="menu-hide-space"></div>
             </aside>
