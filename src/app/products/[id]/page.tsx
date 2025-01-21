@@ -44,27 +44,27 @@ export default async function ProductDetailsPage() {
     const imageSet = [
         {
             id: "1",
-            url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+            url: "https://images.unsplash.com/photo-1664289283342-7dfd936b4b99?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             alt: "A serene mountain landscape with a lake in the foreground.",
         },
         {
             id: "2",
-            url: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+            url: "https://images.unsplash.com/photo-1615041443219-2a63ee45bb60?q=80&w=1827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             alt: "A forest path surrounded by dense green trees.",
         },
         {
             id: "3",
-            url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+            url: "https://images.unsplash.com/photo-1696397279839-a2b8785c2113?q=80&w=1850&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             alt: "A golden sunset over the ocean with waves in the foreground.",
         },
         {
             id: "4",
-            url: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+            url: "https://images.unsplash.com/photo-1708868746670-8ac750b607ab?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             alt: "A snowy mountain peak under a bright blue sky.",
         },
         {
             id: "5",
-            url: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600",
+            url: "https://images.unsplash.com/photo-1665479754958-1a8bdc47cc0d?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             alt: "A colorful hot air balloon floating over a field during sunrise.",
         },
     ];

@@ -77,7 +77,7 @@ export default function Footer() {
 
                 {/* Bottom Section */}
                 <div className="flex flex-wrap justify-between items-center gap-4">
-                    <p className="text-sm text-primary-green/80">&copy; 2025 iloveplants. All rights reserved.</p>
+                    <p className="text-sm text-primary-green/80">&copy; 2025 FIREBIT.in. All rights reserved.</p>
                     <ul className="flex space-x-6 text-sm text-primary-green-400">
                         <li>
                             <a href="#" className="hover:text-gray-100">

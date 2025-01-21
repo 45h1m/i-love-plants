@@ -34,6 +34,5 @@ interface ProductsLayoutProps {
 }
 
 export default async function ProductsLayout({ children }: ProductsLayoutProps) {
-    console.log(children)
     return <main>{children}</main>;
 }

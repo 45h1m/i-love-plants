@@ -94,7 +94,7 @@ html *::-webkit-scrollbar {
 }
 
 html *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-green);
+    background-color: var(--secondary-green);
 }
 
 
