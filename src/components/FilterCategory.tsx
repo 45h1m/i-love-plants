@@ -18,7 +18,7 @@ export default function CategorySelector() {
     };
 
     return (
-        <div className="reveal w-full overflow-x-auto no-scrollbar px-2 sticky top-20 z-20 py-2">
+        <div className="reveal w-full overflow-x-auto no-scrollbar px-2 sticky top-20 z-20 py-2 max-w-7xl mx-auto">
             <div className="flex gap-4">
                 {categories.map((category, index) => (
                     <label key={category} className="flex-shrink-0">

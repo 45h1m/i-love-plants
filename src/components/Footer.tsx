@@ -1,52 +1,97 @@
-import { Home, LayoutGrid, Package } from "lucide-react";
-import Link from "next/link";
-
-const Footer = () => {
+export default function Footer() {
     return (
-        <footer
-            className="fixed w-full bottom-0 left-0 p-2 z-10"
-        >
-            <div style={{
-                backgroundImage: `url('/grass-bottom.png')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center top",
-                width: "100%", // Set width as per your requirement
-                height: "23vh",
-                position: "absolute",
-                left: "0",
-                bottom: "0",
-                pointerEvents: "none"
-            }}></div>
-            <nav className="max-w-7xl bg-white backdrop-blur-lg w-fit p-2 px-4 rounded-3xl mx-auto shadow-2xl">
-                <ul className="flex gap-4">
-                    <Link href={"/"}>
+        <footer className="bg-secondary-green text-gray-200 text-dark-green pb-20 rounded-t-3xl">
+            <div className="max-w-7xl mx-auto px-6 py-12">
+                {/* Top Section */}
+                <div className="flex flex-wrap justify-between items-start">
+                    {/* Logo and Description */}
+                    <div className="w-full md:w-1/3 mb-6 md:mb-0">
+                        <h2 className="text-2xl font-bold mb-2">iloveplants</h2>
+                        <p className="text-sm">Your trusted partner in delivering top-notch services and products.</p>
+                    </div>
+
+                    {/* Links */}
+                    <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-start md:justify-start">
+                        <div>
+                            <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
+                            <ul className="space-y-2">
+                                <li>
+                                    <a href="#" className="hover:underline">
+                                        About Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="hover:underline">
+                                        Services
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="hover:underline">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" className="hover:underline">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Social Media */}
+                    <div className="w-full md:w-1/3 flex justify-start md:justify-end space-x-4">
+                        <a
+                            href="#"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary-green hover:bg-primary-green"
+                            aria-label="Facebook"
+                        >
+                            <i className="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a
+                            href="#"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary-green hover:bg-primary-green"
+                            aria-label="Twitter"
+                        >
+                            <i className="fab fa-twitter text-white"></i>
+                        </a>
+                        <a
+                            href="#"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary-green hover:bg-primary-green"
+                            aria-label="Instagram"
+                        >
+                            <i className="fab fa-instagram text-white"></i>
+                        </a>
+                        <a
+                            href="#"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary-green hover:bg-primary-green"
+                            aria-label="LinkedIn"
+                        >
+                            <i className="fab fa-linkedin-in text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-black/20 border-700 my-8"></div>
+
+                {/* Bottom Section */}
+                <div className="flex flex-wrap justify-between items-center gap-4">
+                    <p className="text-sm text-primary-green/80">&copy; 2025 iloveplants. All rights reserved.</p>
+                    <ul className="flex space-x-6 text-sm text-primary-green-400">
                         <li>
-                            <div className="flex justify-center flex-col items-center gap-2">
-                                <Home className="size-5" />
-                                <p className="text-sm font-bold">Home</p>
-                            </div>
+                            <a href="#" className="hover:text-gray-100">
+                                Privacy Policy
+                            </a>
                         </li>
-                    </Link>
-                    <Link href={"/"}>
                         <li>
-                            <div className="flex justify-center flex-col items-center gap-2">
-                                <LayoutGrid className="size-5" />
-                                <p className="text-sm font-bold">Categories</p>
-                            </div>
+                            <a href="#" className="hover:text-gray-100">
+                                Terms of Service
+                            </a>
                         </li>
-                    </Link>
-                    <Link href={"/"}>
-                        <li>
-                            <div className="flex justify-center flex-col items-center gap-2">
-                                <Package className="size-5" />
-                                <p className="text-sm font-bold">Orders</p>
-                            </div>
-                        </li>
-                    </Link>
-                </ul>
-            </nav>
+                    </ul>
+                </div>
+            </div>
         </footer>
     );
-};
-
-export default Footer;
+}

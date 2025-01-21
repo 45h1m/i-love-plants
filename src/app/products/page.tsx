@@ -1,7 +1,22 @@
-import FilterCategory from "@/components/FilterCategory";
+import { Metadata } from "next";
 import ProductCard from "@/components/ProductCard";
+import FilterCategory from "@/components/FilterCategory";
 
-export default function Home() {
+export const metadata: Metadata = {
+    title: "Shop All Plants",
+    description:
+        "Browse our wide selection of indoor and outdoor plants. From succulents to tropical plants, find the perfect green addition to your space.",
+    openGraph: {
+        title: "Shop All Plants | Plant Store",
+        description: "Browse our wide selection of indoor and outdoor plants.",
+    },
+};
+
+// async function getProducts(): Promise<Product[]> {
+//     // Previous getProducts code...
+// }
+
+export default async function ProductsPage() {
     return (
         <div className="z-10">
             <FilterCategory />
@@ -10,7 +25,7 @@ export default function Home() {
                     title="Peace Lily"
                     description="Air Purifying Indoor Plant"
                     price={189}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="Free Pot"
                     rating={4.3}
@@ -21,7 +36,7 @@ export default function Home() {
                     title="Monstera Deliciosa"
                     description="Trending Indoor Plant"
                     price={399}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Limited Stock"
                     rating={4.7}
@@ -32,7 +47,7 @@ export default function Home() {
                     title="String of Pearls"
                     description="Hanging Succulent"
                     price={159}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="New Arrival"
                     rating={4.6}
@@ -43,7 +58,7 @@ export default function Home() {
                     title="Calathea"
                     description="Prayer Plant"
                     price={279}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="25% off"
                     rating={4.5}
@@ -54,7 +69,7 @@ export default function Home() {
                     title="Rubber Plant"
                     description="Air Purifying"
                     price={339}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Premium Quality"
                     rating={4.6}
@@ -65,7 +80,7 @@ export default function Home() {
                     title="Desert Cactus"
                     description="Succulent Collection"
                     price={199}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Gift Ready"
                     rating={4.8}
@@ -76,7 +91,7 @@ export default function Home() {
                     title="Japanese Maple"
                     description="Exotic Outdoor Plant"
                     price={699}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="15% off"
                     rating={4.8}
@@ -87,7 +102,7 @@ export default function Home() {
                     title="Peace Lily"
                     description="Air Purifying Indoor Plant"
                     price={189}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="Free Pot"
                     rating={4.3}
@@ -98,7 +113,7 @@ export default function Home() {
                     title="Lavender Plant"
                     description="Fragrant Herb"
                     price={199}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="5% off"
                     rating={4.3}
@@ -109,7 +124,7 @@ export default function Home() {
                     title="Jade Plant"
                     description="Low Maintenance"
                     price={299}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="New Arrival"
                     rating={4.1}
@@ -120,7 +135,7 @@ export default function Home() {
                     title="Money Plant"
                     description="Brings Good Luck"
                     price={99}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="10% off"
                     rating={4.6}
@@ -130,7 +145,7 @@ export default function Home() {
                     title="Monstera Deliciosa"
                     description="Trending Indoor Plant"
                     price={399}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Limited Stock"
                     rating={4.7}
@@ -141,7 +156,7 @@ export default function Home() {
                     title="String of Pearls"
                     description="Hanging Succulent"
                     price={159}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="New Arrival"
                     rating={4.6}
@@ -152,7 +167,7 @@ export default function Home() {
                     title="Calathea"
                     description="Prayer Plant"
                     price={279}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="25% off"
                     rating={4.5}
@@ -163,7 +178,7 @@ export default function Home() {
                     title="Rubber Plant"
                     description="Air Purifying"
                     price={339}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Premium Quality"
                     rating={4.6}
@@ -174,7 +189,7 @@ export default function Home() {
                     title="Desert Cactus"
                     description="Succulent Collection"
                     price={199}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="Gift Ready"
                     rating={4.8}
@@ -185,7 +200,7 @@ export default function Home() {
                     title="Lavender Plant"
                     description="Fragrant Herb"
                     price={199}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="5% off"
                     rating={4.3}
@@ -196,7 +211,7 @@ export default function Home() {
                     title="Jade Plant"
                     description="Low Maintenance"
                     price={299}
-                    url="/"
+                    url="/productID"
                     loved={false}
                     offer="New Arrival"
                     rating={4.1}
@@ -206,7 +221,7 @@ export default function Home() {
                     title="Japanese Maple"
                     description="Exotic Outdoor Plant"
                     price={699}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="15% off"
                     rating={4.8}
@@ -217,7 +232,7 @@ export default function Home() {
                     title="Money Plant"
                     description="Brings Good Luck"
                     price={99}
-                    url="/"
+                    url="/productID"
                     loved={true}
                     offer="10% off"
                     rating={4.6}

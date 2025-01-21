@@ -5,8 +5,9 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import BottomNav from "@/components/BottomNav";
 
-const arima = Arima({ weight: ["100", "200","300", "400", "500", "600", "700"], subsets: ["latin"] });
+const arima = Arima({ weight: ["100", "200", "300", "400", "500", "600", "700"], subsets: ["latin"] });
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -41,10 +42,28 @@ export default function RootLayout({
                     <meta name="theme-color" content="#224821" />
                 </Head>
             }
-            <body className={`${geistSans.variable} ${arima.className} leading-none antialiased pb-20`}>
+            <body className={`${geistSans.variable} ${arima.className} leading-none antialiased`}>
                 <Header />
                 {children}
+                <BottomNav />
                 <Footer />
+                <div
+                    style={{
+                        backgroundImage: `url('/grass-bottom.png')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center top",
+                        width: "100%",
+                        maxWidth: "1200px",
+                        height: "13vh",
+                        position: "fixed",
+                        left: "0",
+                        right: "0",
+                        bottom: "0",
+                        pointerEvents: "none",
+                        zIndex: "1",
+                        margin: "0 auto",
+                    }}
+                ></div>
             </body>
         </html>
     );

@@ -15,7 +15,7 @@ type ProductCard = {
 
 const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, rating }: ProductCard) => {
     return (
-        <Link href={url} className="z-0 w-full group">
+        <Link href={`/products/${url}`} className="z-0 w-full group">
             <div className="-z-10 relative w-full bg-white rounded-3xl flex flex-col overflow-hidden mb-4 shadow-sm">
                 <button className="absolute right-2 top-2 bg-light-green text-primary-green rounded-full size-10 flex items-center justify-center z-10 shadow-lg">
                     <svg
