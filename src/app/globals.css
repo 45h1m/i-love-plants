@@ -30,8 +30,7 @@ body {
 }
 
 .border-primary-green {
-
-  border-color: var(--primary-green);
+    border-color: var(--primary-green);
 }
 
 .border-green {
@@ -97,7 +96,14 @@ html *::-webkit-scrollbar-thumb {
     background-color: var(--secondary-green);
 }
 
+.scrollbar-hide {
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
 
 @media (prefers-color-scheme: dark) {
-    
 }
