@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Home, LayoutGrid, Package } from "lucide-react";
 const BottomNav = () => {
     return (
-        <div className="fixed bottom-0 z-10 w-full pb-2">
+        <div className="fixed bottom-0 z-30 w-full pb-2">
             <nav className="max-w-7xl bg-white p-2 px-4 rounded-3xl w-fit mx-auto shadow-2xl">
                 <ul className="flex gap-4">
                     <Link href={"/"}>

@@ -60,7 +60,7 @@ export default function RootLayout({
                         right: "0",
                         bottom: "0",
                         pointerEvents: "none",
-                        zIndex: "1",
+                        zIndex: "25",
                         margin: "0 auto",
                     }}
                 ></div>
