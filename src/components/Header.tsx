@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Button from "./Button";
 import AsideMenu from "./AsideMenu";
+import SearchBar from "./SearchBar";
+import TopNavBar from "./TopNavBar";
 
 const Header = () => {
     return (
@@ -14,17 +15,16 @@ const Header = () => {
                                 <img src="/ilp-logo.png" alt="ilp-logo" />
                             </Link>
                         </div>
+                        <SearchBar />
                     </div>
                     <div className="spacer flex flex-1"></div>
                     <div className="right flex gap-2 items-center">
-                        <Button customClass="bg-primary-green text-light-green">Sign in</Button>
+                        <TopNavBar/>
+                        {/* <Button customClass="bg-primary-green text-light-green">Sign in</Button> */}
                     </div>
                 </div>
             </div>
-            <div
-                className="fixed top-0 left-0 w-full h-[10vh] -z-30 gradient-green-to-b"
-                
-            ></div>
+            <div className="fixed top-0 left-0 w-full h-[10vh] -z-30 gradient-green-to-b"></div>
         </header>
     );
 };

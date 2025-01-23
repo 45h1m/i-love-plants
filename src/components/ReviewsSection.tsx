@@ -32,16 +32,16 @@ export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
             <h2 className="text-2xl font-semibold mb-6 pl-4">Customer Reviews</h2>
 
             {/* List of Reviews */}
-            <div className="space-y-6">
+            <div className="space-y-4">
                 {reviews.length > 0 ? (
                     reviews.map((review) => (
                         <div key={review.id} className="bg-white p-4 rounded-3xl max-w-4xl shadow-sm flex gap-4">
                             {/* Avatar */}
-                            <img src={review.avatar} alt={`${review.user}'s avatar`} className="w-12 h-12 rounded-full object-cover" />
+                            <img src={review.avatar} alt={`${review.user}'s avatar`} className="size-8 rounded-full object-cover" />
 
                             {/* Review Content */}
                             <div className="flex-1">
-                                <div className="flex justify-between items-center mb-2">
+                                <div className="flex flex-wrap gap-2 justify-between items-center mb-2">
                                     <h3 className="font-semibold">{review.user}</h3>
                                     <div className="text-yellow-500 flex">
                                         {Array.from({ length: review.rating }, (_, index) => (
@@ -88,7 +88,7 @@ export default function ReviewsSection({ reviews }: ReviewsSectionProps) {
                                                 key={index}
                                                 src={image}
                                                 alt={`Review ${review.id} - Image ${index + 1}`}
-                                                className="w-20 h-20 object-cover rounded-xl cursor-pointer hover:opacity-80 transition"
+                                                className="size-16 object-cover rounded-xl cursor-pointer hover:opacity-80 transition"
                                                 onClick={() => handleImageClick(image)}
                                             />
                                         ))}
