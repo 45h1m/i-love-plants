@@ -125,10 +125,6 @@ export default async function ProductsPage() {
     return (
         <div className="z-10">
             <FilterCategory />
-            <h2 className="text-2xl font-semibold mb-6 pl-8 max-w-7xl mx-auto pt-4">Related products</h2>
-            <HorizontalScrollContainer />
-            <h2 className="text-2xl font-semibold mb-6 pl-8 max-w-7xl mx-auto pt-4">Indoor plants</h2>
-            <HorizontalScrollContainer />
             <h2 className="text-2xl font-semibold mb-6 pl-8 max-w-7xl mx-auto pt-4">All plants</h2>
             <div className="w-full max-w-7xl mx-auto p-2 px-4 gap-4" style={{ columns: "200px" }}>
                 {products.map((product, index) => (
@@ -147,6 +143,10 @@ export default async function ProductsPage() {
                     />
                 ))}
             </div>
+            <h2 className="text-2xl font-semibold mb-6 pl-8 max-w-7xl mx-auto pt-4">Related products</h2>
+            <HorizontalScrollContainer />
+            <h2 className="text-2xl font-semibold mb-6 pl-8 max-w-7xl mx-auto pt-4">Indoor plants</h2>
+            <HorizontalScrollContainer />
         </div>
     );
 }

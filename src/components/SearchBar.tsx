@@ -47,11 +47,11 @@ const SearchBar = () => {
 
     return (
         <div className={`w-full max-w-7xl ${isFocused && "absolute left-0 px-4 right-0 mx-auto"}`}>
-            <div className="relative">
+            <div className="relative w-full">
                 <input
                     style={{
                         backgroundImage: `url('/search.svg')`,
-                        backgroundSize: "24px 24px",
+                        backgroundSize: "26px 26px",
                         backgroundPosition: "left 10px center",
                         backgroundRepeat: "no-repeat",
                     }}
@@ -61,7 +61,7 @@ const SearchBar = () => {
                     value={query}
                     onChange={handleInputChange}
                     placeholder="Search for a plant..."
-                    className="flex w-full h-12 border pl-12 border-black/10 rounded-lg py-2 focus:outline-none placeholder-green-900/50 caret-green-900 focus:border-green-700 focus:border-2"
+                    className="flex w-full border h-12 pl-12 border-black/10 rounded-lg py-2 focus:outline-none placeholder-green-900/50 caret-green-900 focus:border-green-700 focus:border-2"
                 />
                 {filteredProducts.length > 0 && (
                     <ul className="absolute z-10 bg-secondary-green w-full mt-2 rounded-lg shadow-lg max-h-72 overflow-x-auto">
