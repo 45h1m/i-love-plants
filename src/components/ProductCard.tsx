@@ -1,8 +1,7 @@
-"use client";
-import React from "react";
 import Link from "next/link";
 
-type ProductCard = {
+export type ProductCardProps = {
+    id: string;
     thumbnail: string;
     title: string;
     description: string;
@@ -15,9 +14,10 @@ type ProductCard = {
     productKey: string;
 };
 
-const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, rating, small, productKey }: ProductCard) => {
+const ProductCard = ({ thumbnail, title, description, price, loved, offer, rating, small, productKey, id }:ProductCardProps ) => {
+
     return (
-        <Link key={productKey} href={`/products/${url}`} className={`z-10 w-full group ${small && "min-w-52 w-52"}`}>
+        <Link key={productKey} href={`/products/${id}`} className={`z-10 w-full group ${small && "min-w-52 w-52"}`}>
             <div className={`-z-10 relative w-full bg-white rounded-3xl flex flex-col overflow-hidden mb-4 shadow-sm`}>
                 <button className="absolute right-2 top-2 bg-light-green text-primary-green rounded-full size-10 flex items-center justify-center z-10 shadow-lg">
                     <svg
@@ -43,7 +43,9 @@ const ProductCard = ({ thumbnail, title, description, price, url, loved, offer, 
                             height={100}
                             alt="Product-image"
                             src={thumbnail}
-                            className={`w-full top-0 left-0 object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out ${small && "h-52"}`}
+                            className={`w-full top-0 left-0 object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out ${
+                                small && "h-52"
+                            }`}
                         />
                     </div>
                     <div className="absolute bottom-2 left-2 flex items-center rounded-bl-xl rounded-tr-xl bg-color">

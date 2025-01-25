@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import ProductCard from "./ProductCard"; // Assuming you have this component ready
+import ProductCard from "./ProductCard";
 
 export default function HorizontalScrollContainer() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -113,6 +113,7 @@ export default function HorizontalScrollContainer() {
             <div ref={containerRef} className="flex overflow-x-auto px-4 scrollbar-hide gap-4">
                 {relatedProducts.map((product, index) => (
                     <ProductCard
+                        id={"no-id"}
                         key={index + "-related"}
                         productKey={index + "-related-procuct"}
                         title={product.title}

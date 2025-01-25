@@ -2,122 +2,46 @@ import AccessoryCategories from "@/components/landing/AccessoryCategories";
 import HeroSection from "@/components/landing/HeroSection";
 import PlantCategories from "@/components/landing/PlantCategories";
 import ProductCard from "@/components/ProductCard";
+import { getAllProducts } from "@/utils/DBoperations";
 
-const products = [
-    {
-        title: "Peace Lily",
-        description: "Air Purifying Indoor Plant",
-        price: 189,
-        url: "/",
-        loved: false,
-        offer: "Free Pot",
-        rating: 4.3,
-        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
-        small: true,
-    },
-    {
-        title: "Monstera Deliciosa",
-        description: "Trending Indoor Plant",
-        price: 399,
-        url: "/",
-        loved: true,
-        offer: "Limited Stock",
-        rating: 4.7,
-        thumbnail: "https://images.pexels.com/photos/6297088/pexels-photo-6297088.jpeg?w=200",
-    },
-    {
-        title: "String of Pearls",
-        description: "Hanging Succulent",
-        price: 159,
-        url: "/",
-        loved: true,
-        offer: "New Arrival",
-        rating: 4.6,
-        thumbnail: "https://images.pexels.com/photos/1903964/pexels-photo-1903964.jpeg?w=200",
-    },
-    {
-        title: "Calathea",
-        description: "Prayer Plant",
-        price: 279,
-        url: "/",
-        loved: false,
-        offer: "25% off",
-        rating: 4.5,
-        thumbnail: "https://images.pexels.com/photos/6297385/pexels-photo-6297385.jpeg?w=200",
-    },
-    {
-        title: "Rubber Plant",
-        description: "Air Purifying",
-        price: 339,
-        url: "/",
-        loved: true,
-        offer: "Premium Quality",
-        rating: 4.6,
-        thumbnail: "https://images.pexels.com/photos/6297089/pexels-photo-6297089.jpeg?w=200",
-    },
-    {
-        title: "Desert Cactus",
-        description: "Succulent Collection",
-        price: 199,
-        url: "/",
-        loved: true,
-        offer: "Gift Ready",
-        rating: 4.8,
-        thumbnail: "https://images.pexels.com/photos/1903965/pexels-photo-1903965.jpeg?w=200",
-    },
-    {
-        title: "Japanese Maple",
-        description: "Exotic Outdoor Plant",
-        price: 699,
-        url: "/",
-        loved: true,
-        offer: "15% off",
-        rating: 4.8,
-        thumbnail: "https://images.pexels.com/photos/1146708/pexels-photo-1146708.jpeg?w=200",
-    },
-    {
-        title: "Lavender Plant",
-        description: "Fragrant Herb",
-        price: 199,
-        url: "/",
-        loved: true,
-        offer: "5% off",
-        rating: 4.3,
-        thumbnail: "https://images.pexels.com/photos/6208086/pexels-photo-6208086.jpeg",
-    },
-    {
-        title: "Jade Plant",
-        description: "Low Maintenance",
-        price: 299,
-        url: "/",
-        loved: false,
-        offer: "New Arrival",
-        rating: 4.1,
-        thumbnail: "https://images.pexels.com/photos/6597559/pexels-photo-6597559.jpeg",
-    },
-    {
-        title: "Money Plant",
-        description: "Brings Good Luck",
-        price: 99,
-        url: "/",
-        loved: true,
-        offer: "10% off",
-        rating: 4.6,
-        thumbnail: "https://images.pexels.com/photos/3644742/pexels-photo-3644742.jpeg",
-    },
-];
+// export async function generateStaticParams() {
+//     const products = await getAllProducts(); // Fetch all products from your DB
+//     return products.map((product) => ({
+//         id: product.id,
+//     }));
+// }
 
-export default function Home() {
+// export const getStaticProps: GetStaticProps = async ({}) => {
+//     const products = await productModel.find({}, "id title description rating price offer tags stocks available");
+//     return { props: { products } };
+// };
+
+interface ProductProps {
+    _id: string; // Assuming _id is a string (e.g., MongoDB ObjectId as a string)
+    title: string;
+    description: string;
+    price: number;
+    offer?: string; // Optional field
+    rating?: number; // Optional field
+    images: string[]; // Array of image URLs
+}
+
+export default async function Home() {
+    const fields = ["_id", "title", "description", "price", "offer", "rating", "images", "url"];
+
+    const products = await getAllProducts(fields);
+
+    console.log(products[0].url)
+
     return (
         <>
-            <HeroSection/>
-            <PlantCategories/>
-            <AccessoryCategories/>
+            <HeroSection />
+            <PlantCategories />
+            <AccessoryCategories />
             <section id="most-loved" className="bg-secondary-green pb-10 pt-16 pr-2">
                 <div className="flex gap-2 p-2 max-w-7xl mx-auto">
                     <div className="w-[15vw] [writing-mode:vertical-rl] flex items-center gap-2 text-xl">
                         <h3 className="sticky top-20 bg-color rounded-3xl p-2 py-4 rotate-180 font-bold tracking-wider">Most loved</h3>
-                    
                     </div>
                     <div
                         className="w-full z-10"
@@ -126,56 +50,56 @@ export default function Home() {
                             gap: "1rem",
                         }}
                     >
-                       {products.map((product, index) => (
-                    <ProductCard
-                        key={index + "-all-product-card"}
-                        productKey={index + "-all-product"}
-                        title={product.title}
-                        description={product.description}
-                        price={product.price}
-                        url={"/productID"}
-                        loved={product.loved}
-                        offer={product.offer}
-                        rating={product.rating}
-                        thumbnail={product.thumbnail}
-                        small={product.small}
-                    />
-                ))}
+                        {products.map((product: ProductProps, index: number) => (
+                            <ProductCard
+                                id={product._id}
+                                key={index + "-all-product-card"}
+                                productKey={index + "-all-product"}
+                                title={product.title}
+                                description={product.description}
+                                price={product.price}
+                                url={"/productID"}
+                                offer={product.offer}
+                                rating={product.rating}
+                                thumbnail={product.images[0]}
+                                loved={false}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
             <section id="new-arivals" className="bg-color mt-8 pb-8 pt-6 pr-2">
-            <div className="flex gap-2 p-2 max-w-7xl mx-auto">
-                <div className="w-[15vw] [writing-mode:vertical-rl] flex items-center text-xl">
-                    <h3 className="sticky top-20 bg-primary-green text-white rounded-3xl p-2 py-4 rotate-180 font-bold tracking-wider">
-                        New Arival
-                    </h3>
+                <div className="flex gap-2 p-2 max-w-7xl mx-auto">
+                    <div className="w-[15vw] [writing-mode:vertical-rl] flex items-center text-xl">
+                        <h3 className="sticky top-20 bg-primary-green text-white rounded-3xl p-2 py-4 rotate-180 font-bold tracking-wider">
+                            New Arival
+                        </h3>
+                    </div>
+                    <div
+                        className="w-full z-10"
+                        style={{
+                            columns: "200px",
+                            gap: "1rem",
+                        }}
+                    >
+                        {products.map((product:ProductProps, index: number) => (
+                            <ProductCard
+                                id={product._id}
+                                key={index + "-all-product-card"}
+                                productKey={index + "-all-product"}
+                                title={product.title}
+                                description={product.description}
+                                price={product.price}
+                                url={"/productID"}
+                                offer={product.offer}
+                                rating={product.rating}
+                                thumbnail={product.images[0]}
+                                loved={false}
+                            />
+                        ))}
+                    </div>
                 </div>
-                <div
-                    className="w-full z-10"
-                    style={{
-                        columns: "200px",
-                        gap: "1rem",
-                    }}
-                >
-                    {products.map((product, index) => (
-                    <ProductCard
-                        key={index + "-all-product-card"}
-                        productKey={index + "-all-product"}
-                        title={product.title}
-                        description={product.description}
-                        price={product.price}
-                        url={"/productID"}
-                        loved={product.loved}
-                        offer={product.offer}
-                        rating={product.rating}
-                        thumbnail={product.thumbnail}
-                        small={product.small}
-                    />
-                ))}
-                </div>
-            </div>
-        </section>
+            </section>
         </>
     );
 }
