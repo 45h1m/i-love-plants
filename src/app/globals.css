@@ -171,5 +171,9 @@ html *::-webkit-scrollbar-thumb {
     z-index: 1;
 }
 
+.white-to-bg-gradient {
+    background: linear-gradient(to bottom, white, var(--background));
+}
+
 @media (prefers-color-scheme: dark) {
 }

@@ -25,19 +25,19 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 const demoCartItems: CartItem[] = [
     {
         id: "plant001",
-        name: "Monstera Deliciosa",
+        name: "Money Plant",
         price: 45.99,
         quantity: 2,
         dateAdded: new Date(),
-        thumbnail: "/images/monstera.jpg",
+        thumbnail: "https://images.pexels.com/photos/6297385/pexels-photo-6297385.jpeg?w=200",
     },
     {
         id: "plant002",
-        name: "Snake Plant",
+        name: "Snake Plant 🐍",
         price: 29.5,
         quantity: 1,
         dateAdded: new Date(),
-        thumbnail: "/images/snake-plant.jpg",
+        thumbnail: "https://images.pexels.com/photos/6297385/pexels-photo-6297385.jpeg?w=200",
     },
     {
         id: "plant003",
@@ -45,14 +45,48 @@ const demoCartItems: CartItem[] = [
         price: 79.99,
         quantity: 1,
         dateAdded: new Date(),
-        thumbnail: "/images/fiddle-leaf.jpg",
+        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
+    },
+    {
+        id: "plant004",
+        name: "Fiddle Leaf Fig Oogja Oogja Wala Per",
+        price: 79.99,
+        quantity: 1,
+        dateAdded: new Date(),
+        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
+    },
+    {
+        id: "plant005",
+        name: "Fiddle Leaf Fig Something",
+        price: 79.99,
+        quantity: 1,
+        dateAdded: new Date(),
+        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
+    },
+    {
+        id: "plant006",
+        name: "Fiddle Leaf Fig Something",
+        price: 79.99,
+        quantity: 1,
+        dateAdded: new Date(),
+        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
+    },
+    {
+        id: "plant007",
+        name: "Fiddle Leaf Fig Something",
+        price: 79.99,
+        quantity: 1,
+        dateAdded: new Date(),
+        thumbnail: "https://images.pexels.com/photos/3125197/pexels-photo-3125197.jpeg?w=200",
     },
 ];
 
+
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [cart, setCart] = useState<CartItem[]>(demoCartItems);
-
+    
     useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(demoCartItems));
         const savedCart = localStorage.getItem("cart");
         if (savedCart) {
             setCart(

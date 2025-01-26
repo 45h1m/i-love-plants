@@ -134,14 +134,18 @@ export default function MainImageSlider({ images }: ImageSliderProps) {
 
             {/* Lightbox */}
             {showLightbox && (
-                <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+                <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50">
                     <button onClick={() => setShowLightbox(false)} className="absolute top-4 left-4 text-white flex items-center space-x-2">
                         <MoveLeft className="w-6 h-6" />
                         <span>Back to product</span>
                     </button>
+                    <button onClick={() => setShowLightbox(false)} className="absolute top-0 left-0 opacity-0 w-full h-full text-white flex items-center space-x-2">
+                        <MoveLeft className="w-6 h-6" />
+                        <span>Back to product</span>
+                    </button>
 
-                    <div className="relative max-w-5xl max-h-[80vh] w-full mx-4">
-                        <img src={images[currentIndex].url} alt={images[currentIndex].alt} className="w-full h-full object-contain" />
+                    <div className="relative max-w-5xl max-h-[80vh] w-full mx-4 border-8 border-white overflow-y-auto">
+                        <img src={images[currentIndex].url} alt={images[currentIndex].alt} className="w-full h-full object-cover" />
 
                         {images.length > 1 && (
                             <>
