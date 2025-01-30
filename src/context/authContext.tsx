@@ -37,8 +37,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             const res = await axios.get("/api/auth/verify", { withCredentials: true });
 
-            console.log("res", res);
-
             setAuthState({
                 user: res.status === 200 ? res.data : null,
                 isAuthenticated: res.status === 200,
@@ -58,9 +56,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     useEffect(() => {
         verifyUser();
     }, []);
-
-    // Add this to see when the component actually renders
-    console.log("[AuthContext] Render", authState.isAuthenticated);
 
     return <AuthContext.Provider value={{ ...authState, verifyUser }}>{children}</AuthContext.Provider>;
 };

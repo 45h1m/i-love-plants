@@ -28,8 +28,6 @@ export async function middleware(request: NextRequest) {
             response.headers.set("X-User-Info-status", decodedToken.status);
             response.headers.set("X-User-Info-mobile", decodedToken.mobile);
 
-            console.log("[middleware] " + decodedToken.userId);
-
             return response;
         }
     } catch (error) {

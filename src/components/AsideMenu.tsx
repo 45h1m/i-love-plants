@@ -1,12 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, User, Settings, HelpCircle, Shield, LogOut, ChevronDown, ChevronUp, Bell, CreditCard, Key } from "lucide-react";
+import { X, User, Settings, HelpCircle, Shield, LogOut, ChevronDown, ChevronUp, Bell, CreditCard, Key } from "lucide-react";
 import { useAuth } from "@/context/authContext";
 import axios from "axios";
 import Image from "next/image";
-import { set } from "mongoose";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 // Define menu structure
 const mainMenuItems = [
@@ -66,6 +65,12 @@ const SideMenu = () => {
         notifications: false,
     });
 
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
+
     const authContext = useAuth();
 
     const toggleSection = (section) => {
@@ -94,13 +99,6 @@ const SideMenu = () => {
             console.error("Error logging out:", error);
         }
     }
-
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname, searchParams]);
 
     const MenuLink = ({ href, icon: Icon = Settings, label, className = "" }) => (
         <Link href={href} className={`w-full flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg ${className}`}>
