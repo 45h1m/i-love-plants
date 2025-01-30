@@ -30,9 +30,6 @@ export default async function Home() {
     const fields = ["_id", "title", "description", "price", "offer", "rating", "images", "url"];
 
     const products = await getAllProducts(fields);
-
-    console.log(products[0].url)
-
     return (
         <>
             <HeroSection />
@@ -44,9 +41,8 @@ export default async function Home() {
                         <h3 className="sticky top-20 bg-color rounded-3xl p-2 py-4 rotate-180 font-bold tracking-wider">Most loved</h3>
                     </div>
                     <div
-                        className="w-full z-10"
+                        className="w-full z-10 columns-[120px] sm:columns-[200px]"
                         style={{
-                            columns: "200px",
                             gap: "1rem",
                         }}
                     >
@@ -76,9 +72,8 @@ export default async function Home() {
                         </h3>
                     </div>
                     <div
-                        className="w-full z-10"
+                        className="w-full z-10 columns-[120px] sm:columns-[200px]"
                         style={{
-                            columns: "200px",
                             gap: "1rem",
                         }}
                     >

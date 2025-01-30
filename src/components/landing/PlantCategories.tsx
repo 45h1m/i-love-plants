@@ -75,9 +75,8 @@ const PlantCategories = () => {
                     </Link>
                 </div>
                 <div
-                    className="w-full"
+                    className="w-full z-10 columns-[120px] sm:columns-[200px]"
                     style={{
-                        columns: "200px",
                         gap: "1rem",
                     }}
                 >

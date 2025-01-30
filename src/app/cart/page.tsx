@@ -5,9 +5,11 @@ import { useCart } from "@/context/cartContext";
 import Link from "next/link";
 import { Minus, Plus } from "lucide-react";
 import Button from "@/components/Button";
+import { useRouter } from "next/navigation";
 
 const CartPage: React.FC = () => {
     const { cart, removeFromCart, updateQuantity, clearCart, getTotalPrice } = useCart();
+    const router = useRouter();
 
     const handleQuantityChange = (id: string, newQuantity: number) => {
         if (newQuantity > 0) {
@@ -81,7 +83,7 @@ const CartPage: React.FC = () => {
                     <div className="white-to-bg-gradient sticky bottom-0 flex flex-wrap justify-between items-center pt-4 px-4 space-y-4 sm:space-y-0 pb-14">
                         <div className="text-center sm:text-right w-full max-w-3xl mx-auto">
                             <p className="text-xl font-bold text-dark-green mb-2">Total: {formatCurrency(getTotalPrice())}</p>
-                            <Button customClass="mt-4  justify-center w-full bg-primary-green text-light-green" disabled={false} loading={false}>
+                            <Button onclick={() => router.push("/cart/checkout")} customClass="mt-4  justify-center w-full bg-primary-green text-light-green" disabled={false} loading={false}>
                                 Proceed To Checkout
                             </Button>
                             <ul className="flex gap-4 justify-center pt-4">

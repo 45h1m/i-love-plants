@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import BottomNav from "@/components/BottomNav";
 import { CartProvider } from "@/context/cartContext";
+import { AuthProvider } from "@/context/authContext";
 
 const arima = Arima({ weight: ["100", "200", "300", "400", "500", "600", "700"], subsets: ["latin"] });
 
@@ -44,11 +45,13 @@ export default function RootLayout({
                 </Head>
             }
             <body className={`${geistSans.variable} ${arima.className} leading-none antialiased`}>
+                <AuthProvider>
                 <Header />
-                <CartProvider>
-                {children}
-                    <BottomNav />
-                </CartProvider>
+                    <CartProvider>
+                        {children}
+                        <BottomNav />
+                    </CartProvider>
+                </AuthProvider>
                 <Footer />
                 <div
                     style={{
