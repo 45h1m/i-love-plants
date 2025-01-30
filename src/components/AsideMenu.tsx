@@ -155,7 +155,7 @@ const SideMenu = () => {
                                         <div className="text-xs text-gray-500">{authContext.user?.email || "Add contact"}</div>
                                     </div>
                                 </div>
-                            ) : (
+                            ) : authContext.isAuthenticated && (
                                 <div className="flex items-center flex-col w-full gap-3 mb-2">
                                     <Image
                                         className="rounded-3xl"
