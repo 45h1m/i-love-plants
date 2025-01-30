@@ -3,6 +3,7 @@ const rateMap = new Map<string, { attempts: number; lastReset: number }>();
 const MAX_ATTEMPTS = 3; // Max attempts per window
 const WINDOW_MS = 1 * 60 * 1000;
 
+
 /**
  * Rate limit check for a given key.
  * @param key - Unique identifier for rate limiting (e.g., email, IP).
