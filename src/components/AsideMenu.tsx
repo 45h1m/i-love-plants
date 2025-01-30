@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, User, Settings, HelpCircle, Shield, LogOut, ChevronDown, ChevronUp, Bell, CreditCard, Key } from "lucide-react";
 import { useAuth } from "@/context/authContext";
 import axios from "axios";
 import Image from "next/image";
 import { set } from "mongoose";
+import { usePathname, useSearchParams } from "next/navigation";
 
 // Define menu structure
 const mainMenuItems = [
@@ -94,6 +95,13 @@ const SideMenu = () => {
         }
     }
 
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname, searchParams]);
+
     const MenuLink = ({ href, icon: Icon = Settings, label, className = "" }) => (
         <Link href={href} className={`w-full flex items-center gap-3 p-2 hover:bg-gray-100 rounded-lg ${className}`}>
             {Icon && <Icon size={20} />}
@@ -139,7 +147,7 @@ const SideMenu = () => {
                     <div className="flex-1 overflow-y-auto">
                         {/* Profile section */}
                         <div className="pt-16 px-4">
-                            {authContext.user?.name && authContext.user?.name !== "undefined" && (
+                            {authContext.user?.name && authContext.user?.name !== "undefined" ? (
                                 <div className="flex items-center gap-3 p-2 mb-6">
                                     <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
                                         <User size={20} />
@@ -149,9 +157,29 @@ const SideMenu = () => {
                                         <div className="text-xs text-gray-500">{authContext.user?.email || "Add contact"}</div>
                                     </div>
                                 </div>
+                            ) : (
+                                <div className="flex items-center flex-col w-full gap-3 mb-2">
+                                    <Image
+                                        className="rounded-3xl"
+                                        width={200}
+                                        height={200}
+                                        alt="login-image"
+                                        src={"/images/click-account-panda.webp"}
+                                    />
+                                    <div className="text-xl font-semibold text-center">To complete your account 👇</div>
+                                    <div className="w-full">
+                                        {/* <Link
+                                            className="w-full flex items-center gap-3 p-2 hover:bg-gray-100 hover:text-gray-700 rounded-lg text-white bg-primary-green"
+                                            href={"/account/edit"}
+                                        >
+                                            <LogOut size={20} />
+                                            Login
+                                        </Link> */}
+                                    </div>
+                                </div>
                             )}
 
-                            {!authContext.isAuthenticated &&  (
+                            {!authContext.isAuthenticated && (
                                 <div className="flex items-center flex-col w-full gap-3 mb-6">
                                     <Image className="rounded-3xl" width={200} height={200} alt="login-image" src={"/images/login-panda.webp"} />
                                     <div className="text-2xl font-semibold text-center">Even panda is saying to login</div>
