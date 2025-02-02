@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Product {
     id: number;
@@ -64,17 +64,11 @@ const SearchBar = () => {
                     className="flex w-full border h-12 pl-12 border-black/10 rounded-lg py-2 focus:outline-none placeholder-green-900/50 caret-green-900 focus:border-green-700 focus:border-2"
                 />
                 {filteredProducts.length > 0 && (
-                    <ul className="absolute z-10 bg-secondary-green w-full mt-2 rounded-lg shadow-lg max-h-72 overflow-x-auto">
+                    <ul className="absolute z-10 bg-secondary-green w-full mt-4 rounded-lg shadow-lg max-h-72 overflow-x-auto">
                         {filteredProducts.map((product, index) => (
-                            <li
-                                key={product.id}
-                                onClick={() => handleSuggestionClick(product)}
-                                className={`px-4 py-2 cursor-pointer hover:bg-gray-100/50 ${index === 0 ? "pt-4" : ""} ${
-                                    index === filteredProducts.length - 1 ? "pb-4" : ""
-                                }`}
-                            >
-                                <Link href={product.url}>
-                                    <span className="flex items-start space-x-2 hover:underline">
+                            <li key={"search-match-"+product.id} onClick={() => handleSuggestionClick(product)}>
+                                <Link href={product.url} className={`flex w-full p-2 hover:underline`}>
+                                    <span className="flex items-start gap-2">
                                         <div className="font-medium text-black">{product.name}</div>
                                         <div className="text-sm text-gray-500">({product.tags.join(", ")})</div>
                                     </span>

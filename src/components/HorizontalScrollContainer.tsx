@@ -133,7 +133,7 @@ export default function HorizontalScrollContainer() {
             {scrollState !== "start" && scrollState !== "none" && (
                 <button
                     onClick={scrollToPrev}
-                    className="absolute grid place-items-center left-2 top-1/2 transform -translate-y-1/2 size-16 bg-primary-green text-white p-2 rounded-full hover:brightness-125 transition shadow-md"
+                    className="absolute z-20 grid place-items-center left-2 top-1/2 transform -translate-y-1/2 size-16 bg-primary-green text-white p-2 rounded-full hover:brightness-125 transition shadow-md"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +155,7 @@ export default function HorizontalScrollContainer() {
             {scrollState !== "end" && scrollState !== "none" && (
                 <button
                     onClick={scrollToNext}
-                    className="absolute grid place-items-center right-2 top-1/2 transform -translate-y-1/2 size-16 bg-primary-green text-white p-2 rounded-full shadow-md hover:brightness-125 transition"
+                    className="absolute z-20 grid place-items-center right-2 top-1/2 transform -translate-y-1/2 size-16 bg-primary-green text-white p-2 rounded-full shadow-md hover:brightness-125 transition"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
